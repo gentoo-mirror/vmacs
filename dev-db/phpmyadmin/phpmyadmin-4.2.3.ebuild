@@ -24,7 +24,11 @@ IUSE="setup"
 RDEPEND="
 	!<dev-db/mysql-5.5
 	!<dev-lang/php-5.3
+	!<virtual/mysql-5.5
+
 	dev-db/mysql
+	virtual/mysql
+
 	dev-lang/php[crypt,ctype,filter,json,session,unicode]
 	|| (
 		dev-lang/php[mysqli]
