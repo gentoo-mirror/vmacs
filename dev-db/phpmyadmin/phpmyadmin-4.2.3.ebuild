@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/phpmyadmin-4.2.3.ebuild,v 1.1 2014/02/23 18:01:18 jmbsvicetto Exp $
 
+# vmacs 6/14/2014 - inserted RDEPEND for MySQL 5.5 and php 5.3 per phpMyAdmin's official news page
+# http://www.phpmyadmin.net/home_page/news.php, which states "Welcome to phpMyAdmin 4.2.3, a bugfix version. 
+# Please note that this release enforces the minimum PHP (5.3) and MySQL (5.5) versions"
+
 EAPI="4"
 
 inherit eutils webapp depend.php
@@ -18,6 +22,8 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos
 IUSE="setup"
 
 RDEPEND="
+	!<dev-db/mysql-5.5
+	!<dev-lang/php-5.3
 	dev-lang/php[crypt,ctype,filter,json,session,unicode]
 	|| (
 		dev-lang/php[mysqli]
