@@ -26,8 +26,8 @@ RDEPEND="
 	!<dev-lang/php-5.3
 	!<virtual/mysql-5.5
 
-	dev-db/mysql
-	virtual/mysql
+	>=dev-db/mysql-5.5
+	>=virtual/mysql-5.5
 
 	dev-lang/php[crypt,ctype,filter,json,session,unicode]
 	|| (
