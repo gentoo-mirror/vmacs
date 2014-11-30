@@ -1,0 +1,2 @@
+# phpMyAdmin v4.3.0-rc1 is not yet considered "stable"
+=dev-db/phpmyadmin-4.3.0_rc1
