@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# dev-db/phpmyadmin-4.3.0_rc2.ebuild v1.0 2014/12/03 08:54:37 vmacs
+# dev-db/phpmyadmin-4.3.0.ebuild v1.0 2014/12/07 15:58:15 vmacs
 
 # vmacs 6/14/2014 - inserted RDEPEND for MySQL 5.5 and php 5.3 per phpMyAdmin's official news page
 # http://www.phpmyadmin.net/home_page/news.php, which states "Welcome to phpMyAdmin 4.2.3, a bugfix version. 
