@@ -16,3 +16,6 @@
 
 # Beta Release of phpMyAdmin 4.4
 =dev-db/phpmyadmin-4.4.0_beta1
+
+# Release Candidate of phpMyadmin 4.4
+=dev-db/phpmyadmin-4.4.0_rc1
