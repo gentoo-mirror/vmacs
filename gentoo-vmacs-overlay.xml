@@ -1,0 +1,14 @@
+<?xml version=1.0 ?>
+ <repositories version="1.0">
+   <repo priority="50" quality="experimental" status="unofficial">
+     <name>gentoo-vmacs-overlay</name>
+     <description lang="en">VMACS Personal Gentoo Overlay</description>
+     <homepage>https://github.com/vmacs/gentoo-vmacs-overlay</homepage>
+     <owner type="person">
+       <email>vance.m.allen@gmail.com</email>
+       <name>vmacs</name>
+     </owner>
+     <source type="git">git://github.com/vmacs/gentoo-vmacs-overlay.git</source>
+     <feed>https://github.com/vmacs/gentoo-vmacs-overlay/commits/master.atom</feed>
+   </repo>
+ </repositories>
