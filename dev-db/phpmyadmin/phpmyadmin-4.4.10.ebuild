@@ -1,12 +1,8 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# dev-db/phpmyadmin-4.4.10.ebuild v1.0 2015/06/17 08:38:30 vmacs
+# $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/phpmyadmin-4.4.10.ebuild,v 1.1 2015/07/05 20:23:56 vmacs Exp $
 
-# vmacs 6/14/2014 - inserted RDEPEND for MySQL 5.5 and php 5.3 per phpMyAdmin's official news page
-# http://www.phpmyadmin.net/home_page/news.php, which states "Welcome to phpMyAdmin 4.2.3, a bugfix version. 
-# Please note that this release enforces the minimum PHP (5.3) and MySQL (5.5) versions"
-
-EAPI="4"
+EAPI="5"
 
 inherit eutils webapp depend.php
 
@@ -15,20 +11,17 @@ MY_P="phpMyAdmin-${MY_PV}-all-languages"
 
 DESCRIPTION="Web-based administration for MySQL database in PHP"
 HOMEPAGE="http://www.phpmyadmin.net/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.xz"
+
+# phpMyAdmin has migrated away from SourceForge as of July 2015.
+# Source: https://www.phpmyadmin.net/news/2015/7/2/phpmyadmin-website-and-downloads-moved/
+#SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.xz"
+SRC_URI="https://files.phpmyadmin.net/phpMyAdmin/${MY_PV}/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="setup"
 
 RDEPEND="
-	!<dev-db/mysql-5.5
-	!<dev-lang/php-5.3
-	!<virtual/mysql-5.5
-
-	>=dev-db/mysql-5.5
-	>=virtual/mysql-5.5
-
 	dev-lang/php[crypt,ctype,filter,json,session,unicode]
 	|| (
 		dev-lang/php[mysqli]
