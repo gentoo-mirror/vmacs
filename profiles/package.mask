@@ -1,2 +1,0 @@
-# Beta Release
-=dev-db/phpmyadmin-4.5.0_rc1
