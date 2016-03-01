@@ -1,2 +1,5 @@
 # Alpha release, 2/26/2016
 =dev-db/phpmyadmin-4.6.0_alpha1
+
+# Release Candidate, 2/29/2016
+=dev-db/phpmyadmin-4.6.0_rc1
