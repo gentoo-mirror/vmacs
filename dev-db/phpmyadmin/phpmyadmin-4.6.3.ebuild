@@ -1,24 +1,21 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/phpmyadmin/phpmyadmin-4.4.15.4.ebuild,v 1.1 2016/01/29 09:18:15 vmacs Exp $
+# $Id$
 
 EAPI="5"
 
-inherit eutils webapp depend.php
+inherit eutils webapp
 
 MY_PV=${PV/_/-}
-MY_P="phpMyAdmin-${MY_PV}-all-languages"
+MY_PN="phpMyAdmin"
+MY_P="${MY_PN}-${MY_PV}-all-languages"
 
 DESCRIPTION="Web-based administration for MySQL database in PHP"
-HOMEPAGE="http://www.phpmyadmin.net/"
-
-# phpMyAdmin has migrated away from SourceForge as of July 2015.
-# Source: https://www.phpmyadmin.net/news/2015/7/2/phpmyadmin-website-and-downloads-moved/
-#SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.xz"
-SRC_URI="https://files.phpmyadmin.net/phpMyAdmin/${MY_PV}/${MY_P}.tar.xz"
+HOMEPAGE="https://www.phpmyadmin.net/"
+SRC_URI="https://files.phpmyadmin.net/${MY_PN}/${MY_PV}/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="setup"
 
 RDEPEND="
@@ -27,10 +24,10 @@ RDEPEND="
 		dev-lang/php[mysqli]
 		dev-lang/php[mysql]
 	)
+	virtual/httpd-php:*
 "
 
 need_httpd_cgi
-need_php_httpd
 
 S="${WORKDIR}"/${MY_P}
 
