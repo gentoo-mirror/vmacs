@@ -3,3 +3,4 @@
 
 # Release Candidate, 2/29/2016
 =dev-db/phpmyadmin-4.6.0_rc1
+
