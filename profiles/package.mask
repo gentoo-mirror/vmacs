@@ -1,15 +1,69 @@
-# No more security updates, officially announced on Twitter 12/1/2016
+# Old Alpha release, 2/26/2016
+=dev-db/phpmyadmin-4.6.0_alpha1
+
+# Old Release Candidate, 2/29/2016
+=dev-db/phpmyadmin-4.6.0_rc1
+
+# Unsupported by the developer, 4.5.x series
+=dev-db/phpmyadmin-4.5.5.1
+=dev-db/phpmyadmin-4.5.5
+=dev-db/phpmyadmin-4.5.4.1
+=dev-db/phpmyadmin-4.5.4
+=dev-db/phpmyadmin-4.5.3.1
+=dev-db/phpmyadmin-4.5.3
+=dev-db/phpmyadmin-4.5.2
+=dev-db/phpmyadmin-4.5.1
+=dev-db/phpmyadmin-4.5.0.2
+=dev-db/phpmyadmin-4.5.0.1
+=dev-db/phpmyadmin-4.5.0
+
+# No more security updates for 4.4.x series, officially announced on Twitter 12/1/2016
+=dev-db/phpmyadmin-4.4.0
+=dev-db/phpmyadmin-4.4.1
+=dev-db/phpmyadmin-4.4.1.1
+=dev-db/phpmyadmin-4.4.2
+=dev-db/phpmyadmin-4.4.3
+=dev-db/phpmyadmin-4.4.4
+=dev-db/phpmyadmin-4.4.5
+=dev-db/phpmyadmin-4.4.6
+=dev-db/phpmyadmin-4.4.6.1
+=dev-db/phpmyadmin-4.4.7
+=dev-db/phpmyadmin-4.4.8
+=dev-db/phpmyadmin-4.4.9
+=dev-db/phpmyadmin-4.4.10
+=dev-db/phpmyadmin-4.4.11
+=dev-db/phpmyadmin-4.4.12
+=dev-db/phpmyadmin-4.4.13
+=dev-db/phpmyadmin-4.4.13.1
+=dev-db/phpmyadmin-4.4.14
+=dev-db/phpmyadmin-4.4.14.1
+=dev-db/phpmyadmin-4.4.15
+=dev-db/phpmyadmin-4.4.15.1
+=dev-db/phpmyadmin-4.4.15.2
+=dev-db/phpmyadmin-4.4.15.3
+=dev-db/phpmyadmin-4.4.15.4
 =dev-db/phpmyadmin-4.4.15.5
+=dev-db/phpmyadmin-4.4.15.6
+=dev-db/phpmyadmin-4.4.15.7
 =dev-db/phpmyadmin-4.4.15.8
 =dev-db/phpmyadmin-4.4.15.9
 
-# Likely no more security updates, consider 4.6.x series
-=dev-db/phpmyadmin-4.0.10.18
+# No more security updates for 4.3.x series
+=dev-db/phpmyadmin-4.3.0
+=dev-db/phpmyadmin-4.3.1
+=dev-db/phpmyadmin-4.3.2
+=dev-db/phpmyadmin-4.3.3
+=dev-db/phpmyadmin-4.3.4
+=dev-db/phpmyadmin-4.3.5
+=dev-db/phpmyadmin-4.3.6
+=dev-db/phpmyadmin-4.3.7
+=dev-db/phpmyadmin-4.3.8
+=dev-db/phpmyadmin-4.3.9
+=dev-db/phpmyadmin-4.3.10
+=dev-db/phpmyadmin-4.3.11
+=dev-db/phpmyadmin-4.3.11.1
+=dev-db/phpmyadmin-4.3.12
+=dev-db/phpmyadmin-4.3.13
+=dev-db/phpmyadmin-4.3.13.1
+=dev-db/phpmyadmin-4.3.13.2
 =dev-db/phpmyadmin-4.3.13.3
-
-# Alpha release, 2/26/2016
-=dev-db/phpmyadmin-4.6.0_alpha1
-
-# Release Candidate, 2/29/2016
-=dev-db/phpmyadmin-4.6.0_rc1
-
