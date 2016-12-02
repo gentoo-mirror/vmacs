@@ -1,4 +1,6 @@
 # No more security updates, officially announced on Twitter 12/1/2016
+=dev-db/phpmyadmin-4.4.15.5
+=dev-db/phpmyadmin-4.4.15.8
 =dev-db/phpmyadmin-4.4.15.9
 
 # Likely no more security updates, consider 4.6.x series
