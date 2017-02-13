@@ -1,3 +1,6 @@
+# Beta release, 2/12/2017
+=dev-db/phpmyadmin-4.7.0_beta1
+
 # Old Alpha release, 2/26/2016
 =dev-db/phpmyadmin-4.6.0_alpha1
 
