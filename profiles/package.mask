@@ -1,3 +1,6 @@
+# Release Candidate
+#=dev-db/phpmyadmin-4.7.0_rc1
+
 # Beta release, 2/12/2017
 =dev-db/phpmyadmin-4.7.0_beta1
 
