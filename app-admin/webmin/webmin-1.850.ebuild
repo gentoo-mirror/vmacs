@@ -94,7 +94,7 @@ src_install() {
 
 	# Copy our own setup script to installation folder
 	insinto /usr/libexec/webmin
-	newins "${FILESDIR}"/gentoo-setup-${PV} gentoo-setup.sh
+	newins "${FILESDIR}"/gentoo-setup gentoo-setup.sh
 	fperms 0744 /usr/libexec/webmin/gentoo-setup.sh
 
 	# This is here if we ever want in future ebuilds to add some specific
