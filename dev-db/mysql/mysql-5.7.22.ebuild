@@ -6,7 +6,7 @@ EAPI="6"
 MY_EXTRAS_VER="20180214-0024Z"
 MY_PV="${PV//_alpha_pre/-m}"
 MY_PV="${MY_PV//_/-}"
-HAS_TOOLS_PATCH="1"
+HAS_TOOLS_PATCH="0"
 SUBSLOT="18"
 #fails to build with ninja
 CMAKE_MAKEFILE_GENERATOR=emake
@@ -24,21 +24,6 @@ DEPEND="${COMMON_DEPEND}
 	|| ( >=sys-devel/gcc-3.4.6 >=sys-devel/gcc-apple-4.0 )
 	test? ( dev-perl/JSON )"
 RDEPEND="${COMMON_DEPEND}"
-
-MY_PATCH_DIR="${WORKDIR}/mysql-extras-${MY_EXTRAS_VER}"
-
-PATCHES=(
-	"${MY_PATCH_DIR}"/01050_all_mysql_config_cleanup-5.6.patch
-	"${MY_PATCH_DIR}"/02040_all_embedded-library-shared-5.5.10.patch
-	"${MY_PATCH_DIR}"/20006_all_cmake_elib-mysql-5.6.35.patch
-	"${MY_PATCH_DIR}"/20007_all_cmake-debug-werror-5.6.22.patch
-	"${MY_PATCH_DIR}"/20008_all_mysql-tzinfo-symlink-5.6.37.patch
-	"${MY_PATCH_DIR}"/20009_all_mysql_myodbc_symbol_fix-5.6.patch
-	"${MY_PATCH_DIR}"/20018_all_mysql-5.6.25-without-clientlibs-tools.patch
-	"${MY_PATCH_DIR}"/20027_all_mysql-5.5-perl5.26-includes.patch
-	"${MY_PATCH_DIR}"/20028_all_mysql-5.6-gcc7.patch
-	"${MY_PATCH_DIR}"/20031_all_mysql-5.6-fix-monitor.test.patch
-)
 
 # Please do not add a naive src_unpack to this ebuild
 # If you want to add a single patch, copy the ebuild to an overlay
