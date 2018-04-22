@@ -22,6 +22,7 @@ COMMON_DEPEND="numa? ( sys-process/numactl:= )"
 
 DEPEND="${COMMON_DEPEND}
 	|| ( >=sys-devel/gcc-3.4.6 >=sys-devel/gcc-apple-4.0 )
+	>=dev-libs/boost-1.66
 	test? ( dev-perl/JSON )"
 RDEPEND="${COMMON_DEPEND}"
 
