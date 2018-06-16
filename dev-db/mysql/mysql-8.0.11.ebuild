@@ -88,6 +88,7 @@ COMMON_DEPEND="
 	client-libs? ( >=sys-libs/zlib-1.2.3:0=[${MULTILIB_USEDEP},static-libs?] )
 	!client-libs? ( >=sys-libs/zlib-1.2.3:0= )
 	sys-libs/ncurses:0=
+	>=sys-devel/clang-3.4.0
 	server? (
 		>=app-arch/lz4-0_p131:=
 		>=dev-libs/boost-1.65.0:=
@@ -96,7 +97,7 @@ COMMON_DEPEND="
 "
 DEPEND="virtual/yacc
 	static? ( sys-libs/ncurses[static-libs] )
-	|| ( >=sys-devel/gcc-3.4.6 >=sys-devel/gcc-apple-4.0 )
+	|| ( >=sys-devel/gcc-4.8.0 >=sys-devel/gcc-apple-4.0 )
 	${COMMON_DEPEND}"
 RDEPEND="selinux? ( sec-policy/selinux-mysql )
 	abi_x86_32? ( !app-emulation/emul-linux-x86-db[-abi_x86_32(-)] )
@@ -117,9 +118,9 @@ pkg_setup() {
 		# Bug 565584.  InnoDB now requires atomic functions introduced with gcc-4.7 on
 		# non x86{,_64} arches
 		if ! use amd64 && ! use x86 && [[ ${GCC_MAJOR_SET} -lt 4 || \
-			${GCC_MAJOR_SET} -eq 4 && ${GCC_MINOR_SET} -lt 7 ]] ; then
-			eerror "${PN} needs to be built with gcc-4.7 or later."
-			eerror "Please use gcc-config to switch to gcc-4.7 or later version."
+			${GCC_MAJOR_SET} -eq 4 && ${GCC_MINOR_SET} -lt 8 ]] ; then
+			eerror "${PN} needs to be built with gcc-4.8 or later."
+			eerror "Please use gcc-config to switch to gcc-4.8 or later version."
 			die
 		fi
 	fi
