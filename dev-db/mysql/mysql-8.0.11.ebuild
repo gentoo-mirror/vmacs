@@ -55,9 +55,12 @@ fi
 
 PATCHES=(
 	"${MY_PATCH_DIR}"/20001_all_fix-minimal-build-cmake-mysql-5.7.patch
+	"${MY_PATCH_DIR}"/20003_all_fix-5.7-library.patch
+	"${MY_PATCH_DIR}"/20006_all_cmake_elib-mysql-5.7.patch
 	"${MY_PATCH_DIR}"/20007_all_cmake-debug-werror-5.7.patch
-#	"${MY_PATCH_DIR}"/20008_all_mysql-tzinfo-symlink-5.7.6.patch
+	"${MY_PATCH_DIR}"/20008_all_mysql-tzinfo-symlink-5.7.6.patch
 	"${MY_PATCH_DIR}"/20009_all_mysql_myodbc_symbol_fix-5.7.10.patch
+	"${MY_PATCH_DIR}"/20017_all_mysql-openssl-cmake-detection.patch
 	"${MY_PATCH_DIR}"/20018_all_mysql-5.7.21-without-clientlibs-tools.patch
 )
 
