@@ -1,2 +1,7 @@
 app-admin/webmin 1.881: A web-based Unix systems administration interface
+dev-db/mysql 8.0.11: A fast, multi-threaded, multi-user SQL database server
+dev-db/phpmyadmin 4.8.3-r1: Web-based administration for MySQL database in PHP
+media-sound/teamspeak-client-bin 3.1.6: TeamSpeak Client - Voice Communication Software
+virtual/mysql 8.0-r1: Virtual for MySQL database server
+www-apps/joomla 3.8.2 3.8.3: A powerful Open Source Content Management System
 www-apps/mediawiki 1.30.0: The MediaWiki wiki web application (as used on wikipedia.org)
