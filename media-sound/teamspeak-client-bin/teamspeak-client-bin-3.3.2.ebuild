@@ -8,8 +8,8 @@ inherit eutils unpacker
 DESCRIPTION="TeamSpeak Client - Voice Communication Software"
 HOMEPAGE="http://www.teamspeak.com/"
 SRC_URI="
-	amd64? ( http://ftp.4players.de/pub/hosted/ts3/releases/${PV}/TeamSpeak3-Client-linux_amd64-${PV/_/-}.run )
-	x86? ( http://ftp.4players.de/pub/hosted/ts3/releases/${PV}/TeamSpeak3-Client-linux_x86-${PV/_/-}.run )"
+	amd64? ( https://files.teamspeak-services.com/releases/client/${PV}/TeamSpeak3-Client-linux_amd64-${PV/_/-}.run )
+	x86? ( https://files.teamspeak-services.com/releases/client/${PV}/TeamSpeak3-Client-linux_x86-${PV/_/-}.run )"
 
 LICENSE="teamspeak3"
 SLOT="0"
