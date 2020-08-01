@@ -1,5 +1,6 @@
-app-admin/webmin 1.930: A web-based Unix systems administration interface
-media-sound/teamspeak-client-bin 3.3.2: TeamSpeak Client - Voice Communication Software
+app-admin/webmin 1.953: A web-based Unix systems administration interface
+media-sound/teamspeak-client-bin 3.5.3: TeamSpeak Client - Voice Communication Software
 sys-process/vixie-cron 4.1-r15: Paul Vixie's cron daemon, a fully featured crond implementation
-www-apps/joomla 3.8.2 3.8.3: A powerful Open Source Content Management System
-www-apps/mediawiki 1.33.1: The MediaWiki wiki web application (as used on wikipedia.org)
+virtual/cron 0-r1: Virtual for cron
+www-apps/joomla 3.9.20: A powerful Open Source Content Management System
+www-apps/mediawiki 1.34.2: The MediaWiki wiki web application (as used on wikipedia.org)
