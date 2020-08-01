@@ -1,10 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-inherit webapp versionator
+EAPI=7
+inherit webapp
 
-MY_BRANCH=$(get_version_component_range 1-2)
+MY_BRANCH=$(ver_cut 1-2)
 
 DESCRIPTION="The MediaWiki wiki web application (as used on wikipedia.org)"
 HOMEPAGE="http://www.mediawiki.org"
@@ -12,21 +12,29 @@ SRC_URI="http://releases.wikimedia.org/${PN}/${MY_BRANCH}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha amd64 ~arm ~arm64 ppc x86"
-IUSE="imagemagick mysql postgres sqlite"
+IUSE="imagemagick mysql postgres +sqlite"
+REQUIRED_USE="|| ( mysql postgres sqlite )"
 
-RDEPEND=">=dev-lang/php-5.5.9[json,mysql?,postgres?,session,xml,xmlreader]
+RDEPEND="dev-lang/php[ctype,fileinfo,iconv,json,postgres?,session,ssl,unicode,xml,xmlreader]
 	imagemagick? ( virtual/imagemagick-tools )
 	!imagemagick? ( dev-lang/php[gd] )
+	mysql? ( dev-lang/php[mysql,mysqli] )
 	sqlite? (
-		dev-db/sqlite:3[fts3(+)]
-		>=dev-lang/php-5.5.9[pdo]
-		|| ( dev-lang/php[sqlite] dev-lang/php[sqlite3] )
+		dev-db/sqlite[fts3(+)]
+		dev-lang/php[pdo,sqlite]
 	)
 	virtual/httpd-php"
 
 need_httpd_cgi
 
 RESTRICT="test"
+
+src_unpack() {
+	default
+
+	# remove lua binaries (bug #631554)
+	rm -fr "${S}"/extensions/Scribunto/includes/engines/LuaStandalone/binaries || die "Failed to remove lua binaries"
+}
 
 src_install() {
 	webapp_src_preinst
@@ -38,9 +46,8 @@ src_install() {
 	# install instructions guide the user to enable the feature.
 	local DOCS="FAQ HISTORY INSTALL README RELEASE-NOTES-${PV:0:4} UPGRADE"
 	dodoc ${DOCS} docs/*.txt
-	docinto php-memcached
-	dodoc docs/php-memcached/*
-
+	docinto databases
+	dodoc docs/databases/*
 	# Clean everything not used at the site...
 	rm -rf ${DOCS} COPYING tests docs || die
 	find . -name Makefile -delete || die
