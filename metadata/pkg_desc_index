@@ -1,5 +1,5 @@
 app-admin/webmin 1.953: A web-based Unix systems administration interface
-dev-db/phpmyadmin 5.0.4: Web-based administration for MySQL database in PHP
+dev-db/phpmyadmin 5.1.0: Web-based administration for MySQL database in PHP
 media-sound/teamspeak-client-bin 3.5.3: TeamSpeak Client - Voice Communication Software
 sys-process/vixie-cron 4.1-r15: Paul Vixie's cron daemon, a fully featured crond implementation
 virtual/cron 0-r1: Virtual for cron
