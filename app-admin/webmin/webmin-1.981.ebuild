@@ -1,10 +1,8 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="7"
-
-inherit eutils pam ssl-cert systemd
+EAPI=7
+inherit pam systemd
 
 DESCRIPTION="A web-based Unix systems administration interface"
 HOMEPAGE="http://www.webmin.com/"
@@ -14,11 +12,9 @@ SRC_URI="minimal? ( mirror://sourceforge/webadmin/${P}-minimal.tar.gz )
 LICENSE="BSD GPL-2"
 SLOT="0"
 
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
-# NOTE: The ssl flag auto added by ssl-cert eclass is not used actually
-# because openssl is forced by dev-perl/Net-SSLeay
-IUSE="minimal +ssl mysql postgres ldap"
+IUSE="minimal mysql postgres ldap"
 REQUIRED_USE="minimal? ( !mysql !postgres !ldap )"
 
 # All the required perl modules can be found easily using (in Webmin's root src dir):
@@ -45,10 +41,13 @@ DEPEND="virtual/perl-MIME-Base64
 		ldap? ( dev-perl/perl-ldap )
 		dev-perl/XML-Generator
 		dev-perl/XML-Parser
-	)"
+	)
+"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+	default
+
 	local perl="$( which perl )"
 
 	# Remove the unnecessary and incompatible files
@@ -94,7 +93,7 @@ src_install() {
 
 	# Copy our own setup script to installation folder
 	insinto /usr/libexec/webmin
-	newins "${FILESDIR}"/gentoo-setup gentoo-setup.sh
+	newins "${FILESDIR}"/gentoo-setup-${PV} gentoo-setup.sh
 	fperms 0744 /usr/libexec/webmin/gentoo-setup.sh
 
 	# This is here if we ever want in future ebuilds to add some specific
@@ -114,22 +113,22 @@ src_install() {
 	# Create the init.d file and put the neccessary variables there
 	newinitd "${FILESDIR}"/init.d.webmin webmin
 	sed -i \
-		-e "s:%exe%:${EROOT}usr/libexec/webmin/miniserv.pl:" \
-		-e "s:%pid%:${EROOT}var/run/webmin.pid:" \
-		-e "s:%conf%:${EROOT}etc/webmin/miniserv.conf:" \
-		-e "s:%config%:${EROOT}etc/webmin/config:" \
-		-e "s:%perllib%:${EROOT}usr/libexec/webmin:" \
-		"${ED}etc/init.d/webmin" \
+		-e "s:%exe%:${EROOT}/usr/libexec/webmin/miniserv.pl:" \
+		-e "s:%pid%:${EROOT}/var/run/webmin.pid:" \
+		-e "s:%conf%:${EROOT}/etc/webmin/miniserv.conf:" \
+		-e "s:%config%:${EROOT}/etc/webmin/config:" \
+		-e "s:%perllib%:${EROOT}/usr/libexec/webmin:" \
+		"${ED}/etc/init.d/webmin" \
 		|| die "Failed to patch the webmin init file"
 
 	# Create the systemd service file and put the neccessary variables there
 	systemd_newunit "${FILESDIR}"/webmin.service webmin.service
 	sed -i \
-		-e "s:%exe%:${EROOT}usr/libexec/webmin/miniserv.pl:" \
-		-e "s:%pid%:${EROOT}var/run/webmin.pid:" \
-		-e "s:%conf%:${EROOT}etc/webmin/miniserv.conf:" \
-		-e "s:%config%:${EROOT}etc/webmin/config:" \
-		-e "s:%perllib%:${EROOT}usr/libexec/webmin:" \
+		-e "s:%exe%:${EROOT}/usr/libexec/webmin/miniserv.pl:" \
+		-e "s:%pid%:${EROOT}/var/run/webmin.pid:" \
+		-e "s:%conf%:${EROOT}/etc/webmin/miniserv.conf:" \
+		-e "s:%config%:${EROOT}/etc/webmin/config:" \
+		-e "s:%perllib%:${EROOT}/usr/libexec/webmin:" \
 		"${ED}$(_systemd_get_systemunitdir)/webmin.service" \
 		|| die "Failed to patch the webmin systemd service file"
 
@@ -138,7 +137,7 @@ src_install() {
 
 	# Copy files to installation folder
 	ebegin "Copying install files to destination"
-	cp -pPR "${S}"/* "${ED}usr/libexec/webmin"
+	cp -pPR "${S}"/* "${ED}/usr/libexec/webmin"
 	eend $?
 }
 
@@ -154,10 +153,10 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	# Run pkg_config phase first - non interactively
+	# Run webmin_config first - non interactively
 	export INTERACTIVE="no"
-	pkg_config
-	# Every next time pkg_config should be interactive
+	webmin_config
+	# Every next time webmin_config should be interactive
 	INTERACTIVE="yes"
 
 	ewarn
@@ -200,6 +199,10 @@ pkg_postrm() {
 }
 
 pkg_config(){
+	webmin_config
+}
+
+webmin_config(){
 	# First stop service if running
 	ebegin "Stopping any running Webmin instance"
 	if systemd_is_booted ; then
@@ -270,18 +273,18 @@ pkg_config(){
 	export reset=$_reset
 
 	# Create ssl certificate for Webmin if there is not one in the proper place
-	if [[ ! -e "${EROOT}etc/ssl/webmin/server.pem" ]]; then
+	if [[ ! -e "${EROOT}/etc/ssl/webmin/server.pem" ]]; then
 		SSL_ORGANIZATION="${SSL_ORGANIZATION:-Webmin Server}"
 		SSL_COMMONNAME="${SSL_COMMONNAME:-*}"
 		install_cert "${EROOT}/etc/ssl/webmin/server"
 	fi
 
 	# Ensure all paths passed to the setup script use EROOT
-	export wadir="${EROOT}usr/libexec/webmin"
-	export config_dir="${EROOT}etc/webmin"
-	export var_dir="${EROOT}var/log/webmin"
+	export wadir="${EROOT}/usr/libexec/webmin"
+	export config_dir="${EROOT}/etc/webmin"
+	export var_dir="${EROOT}/var/log/webmin"
 	export tempdir="${T}"
-	export pidfile="${EROOT}var/run/webmin.pid"
+	export pidfile="${EROOT}/var/run/webmin.pid"
 	export perl="$( which perl )"
 	export os_type='gentoo-linux'
 	export os_version='*'
@@ -297,7 +300,7 @@ pkg_config(){
 	export no_sslcompression=1
 	export no_tls1=1
 	export no_tls1_1=1
-	export keyfile="${EROOT}etc/ssl/webmin/server.pem"
+	export keyfile="${EROOT}/etc/ssl/webmin/server.pem"
 	export port=10000
 
 	export atboot=0
