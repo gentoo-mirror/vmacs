@@ -10,5 +10,5 @@ LICENSE=GPL-2
 RDEPEND=>=dev-lang/php-5.3.10[json,zlib,xml] virtual/httpd-php || ( dev-lang/php[mysql] dev-lang/php[postgres] ) app-admin/webapp-config
 SLOT=3.9.20
 SRC_URI=https://github.com/joomla/joomla-cms/releases/download/3.9.20/Joomla_3.9.20-Stable-Full_Package.tar.bz2
-_eclasses_=webapp	60f2eb31dec733d05e8114cc078ebc33	estack	055c42df72f76a4f45ec92b35e83cd56	versionator	d3fb3ba33acc3bbbdc4d7970227c100d
+_eclasses_=webapp	cbf94d7383f416c5ead4634aa89916a9	estack	055c42df72f76a4f45ec92b35e83cd56	versionator	d3fb3ba33acc3bbbdc4d7970227c100d
 _md5_=e1056bba56b8dce62a7911c13b6171ff
