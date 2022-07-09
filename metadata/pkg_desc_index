@@ -1,5 +1,5 @@
 app-admin/webmin 1.996: A web-based Unix systems administration interface
-dev-db/phpmyadmin 5.2.0: Web-based administration for MySQL database in PHP
+dev-db/phpmyadmin 5.1.1: Web-based administration for MySQL database in PHP
 media-sound/teamspeak-server 3.13.6: A server software for hosting quality voice communication via the internet
 virtual/cron 0-r1: Virtual for cron
 www-apps/joomla 4.1.5: A powerful Open Source Content Management System
