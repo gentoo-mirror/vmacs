@@ -10,6 +10,7 @@ MY_PV=$(replace_version_separator '_' '-')
 DESCRIPTION="A powerful Open Source Content Management System"
 HOMEPAGE="http://www.joomla.org/"
 M_PN="Joomla_${MY_PV}-Stable-Full_Package"
+RESTRICT="mirror"
 SRC_URI="https://github.com/${PN}/${PN}-cms/releases/download/${MY_PV}/${M_PN}.tar.bz2"
 
 LICENSE="GPL-2"
