@@ -1,9 +1,2 @@
-# MySQL 8.0.11 is not compiling correctly yet--please stand by!
-=dev-db/mysql-8.0.11
-=virtual/mysql-8.0-r1
-
-# Release Candidate
-#=dev-db/phpmyadmin-4.7.0_rc1
-
 # Per https://www.phpmyadmin.net/downloads/, versions prior to 4.8 are EOL (end of life).
 <dev-db/phpmyadmin-4.8
