@@ -1,5 +1,4 @@
 dev-db/phpmyadmin 5.1.1: Web-based administration for MySQL database in PHP
 media-sound/teamspeak-server 3.13.7: A server software for hosting quality voice communication via the internet
 virtual/cron 0-r1: Virtual for cron
-www-apps/joomla 4.2.8: A powerful Open Source Content Management System
 www-apps/mediawiki 1.38.2: The MediaWiki wiki web application (as used on wikipedia.org)
