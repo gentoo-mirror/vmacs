@@ -1,0 +1,15 @@
+DEFINED_PHASES=install postinst prerm setup
+DEPEND=|| ( virtual/httpd-cgi virtual/httpd-fastcgi ) app-admin/webapp-config
+DESCRIPTION=A powerful Open Source Content Management System
+EAPI=7
+HOMEPAGE=http://www.joomla.org/
+INHERIT=webapp
+IUSE=vhosts
+KEYWORDS=~amd64 ~ppc ~sparc ~x86
+LICENSE=GPL-2
+RDEPEND=>=dev-lang/php-8[zlib,xml] virtual/httpd-php || ( dev-lang/php[mysql] dev-lang/php[postgres] ) app-admin/webapp-config
+RESTRICT=mirror
+SLOT=4.2.9
+SRC_URI=https://github.com/joomla/joomla-cms/releases/download/4.2.9/Joomla_4.2.9-Stable-Full_Package.tar.bz2
+_eclasses_=webapp	1aad5c010cfdf11d0376c80467b0de4c
+_md5_=f7227cab0ca977b383cbf3fdeb882d84
