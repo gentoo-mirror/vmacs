@@ -12,7 +12,8 @@ DESCRIPTION="A powerful Open Source Content Management System"
 HOMEPAGE="http://www.joomla.org/"
 M_PN="Joomla_${MY_PV}-Stable-Full_Package"
 RESTRICT="mirror"
-SRC_URI="https://github.com/${PN}/${PN}-cms/releases/download/${MY_PV}/${M_PN}.tar.bz2"
+#SRC_URI="https://github.com/${PN}/${PN}-cms/releases/download/${MY_PV}/${M_PN}.tar.bz2"
+SRC_URI="https://github.com/${PN}/${PN}-cms/releases/download/${MY_PV}/${M_PN}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
@@ -37,7 +38,7 @@ src_install () {
 	administrator/modules administrator/templates cache components images installation
 	images/banners language language/en-GB media modules plugins
 	plugins/authentication plugins/content plugins/editors plugins/editors-xtd
-	plugins/search plugins/system plugins/user plugins tmp templates"
+	plugins/system plugins/user plugins tmp templates"
 
 	for file in ${files}; do
 		webapp_serverowned -R "${MY_HTDOCSDIR}"/${file}
