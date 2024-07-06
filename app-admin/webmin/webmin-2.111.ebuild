@@ -7,8 +7,8 @@ inherit pam systemd
 DESCRIPTION="A web-based Unix systems administration interface"
 HOMEPAGE="http://www.webmin.com/"
 RESTRICT="mirror"
-SRC_URI="minimal? ( mirror://sourceforge/webadmin/${P}-minimal.tar.gz )
-	!minimal? ( mirror://sourceforge/webadmin/${P}.tar.gz )"
+SRC_URI="minimal? ( https://github.com/webmin/webmin/releases/download/${PV}/${P}-minimal.tar.gz )
+	!minimal? ( https://github.com/webmin/webmin/releases/download/${PV}/${P}.tar.gz )"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
