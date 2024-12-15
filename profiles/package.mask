@@ -1,2 +1,0 @@
-# Per https://www.phpmyadmin.net/downloads/, versions prior to 4.8 are EOL (end of life).
-<dev-db/phpmyadmin-4.8
